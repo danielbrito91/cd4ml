@@ -1,0 +1,30 @@
+schema: '2.0'
+stages:
+  data_load:
+    cmd: task data_load
+    deps:
+    - path: cd4ml_sales_forecasting/download_data.py
+      hash: md5
+      md5: 75f339e0720aaca235c3272147d50640
+      size: 803
+  data_split:
+    cmd: task data_split
+    deps:
+    - path: cd4ml_sales_forecasting/split_data.py
+      hash: md5
+      md5: a58b0d5ba967861053f03e3823f98abe
+      size: 975
+  train:
+    cmd: task train
+    deps:
+    - path: cd4ml_sales_forecasting/decision_tree.py
+      hash: md5
+      md5: 0ea35e18ebecf78eb6a8906c8686779b
+      size: 2013
+  eval:
+    cmd: task eval
+    deps:
+    - path: cd4ml_sales_forecasting/evaluation.py
+      hash: md5
+      md5: 3ec02e744c1343f0c4ea8afccde79413
+      size: 1480

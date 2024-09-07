@@ -1,0 +1,17 @@
+stages:
+  data_load:
+    cmd: task data_load
+    deps:
+    - cd4ml_sales_forecasting/download_data.py
+  data_split:
+    cmd: task data_split
+    deps:
+    - cd4ml_sales_forecasting/split_data.py
+  train:
+    cmd: task train
+    deps:
+    - cd4ml_sales_forecasting/decision_tree.py   
+  eval:
+    cmd: task eval
+    deps:
+    - cd4ml_sales_forecasting/evaluation.py

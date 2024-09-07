@@ -1,0 +1,17 @@
+data_load:
+  data_path: 'data/raw/store47-2016.zstd'
+
+data_split:
+  test_start_date: '2016-11-01'
+  train_path: 'data/splitter/train.zstd'
+  test_path: 'data/splitter/test.zstd'
+
+features:
+  max_lags: 7
+
+train:
+  model_path: 'models/model.pkl'
+
+
+evaluate:
+  metrics_path: 'results/metrics.json'

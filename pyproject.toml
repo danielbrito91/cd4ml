@@ -11,6 +11,7 @@ polars = "^1.6.0"
 pyarrow = "^17.0.0"
 python-dotenv = "^1.0.1"
 scikit-learn = "^1.5.1"
+dvc = "^3.55.2"
 
 
 [tool.poetry.group.dev.dependencies]
@@ -34,6 +35,10 @@ quote-style = 'single'
 [tool.taskipy.tasks]
 lint = 'ruff check cd4ml_sales_forecasting/. && ruff check cd4ml_sales_forecasting/. --diff'
 format = 'ruff check cd4ml_sales_forecasting/. --fix && ruff format cd4ml_sales_forecasting/.'
+data_load = 'python cd4ml_sales_forecasting/download_data.py --config=params.yaml'
+data_split = 'python cd4ml_sales_forecasting/split_data.py --config=params.yaml'
+train = 'python cd4ml_sales_forecasting/decision_tree.py --config=params.yaml'
+eval = 'python cd4ml_sales_forecasting/evaluation.py --config=params.yaml'
 
 [build-system]
 requires = ["poetry-core"]
