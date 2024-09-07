@@ -12,6 +12,7 @@ __pycache__/
 
 data/*
 .DS_Store
+models/*
 
 # Distribution / packaging
 .Python
