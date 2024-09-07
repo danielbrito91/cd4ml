@@ -7,7 +7,32 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "3.12.*"
+polars = "^1.6.0"
+pyarrow = "^17.0.0"
+python-dotenv = "^1.0.1"
 
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.29.5"
+pre-commit = "^3.8.0"
+ruff = "^0.6.4"
+taskipy = "^1.13.0"
+
+[tool.ruff]
+line-length = 79
+extend-exclude = ['migrations']
+
+[tool.ruff.lint]
+preview = true
+select = ['I', 'F', 'E', 'W', 'PL', 'PT']
+
+[tool.ruff.format]
+preview = true
+quote-style = 'single'
+
+[tool.taskipy.tasks]
+lint = 'ruff check cd4ml_sales_forecasting/. && ruff check cd4ml_sales_forecasting/. --diff'
+format = 'ruff check cd4ml_sales_forecasting/. --fix && ruff format cd4ml_sales_forecasting/.'
 
 [build-system]
 requires = ["poetry-core"]
