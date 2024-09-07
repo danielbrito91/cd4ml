@@ -1,0 +1,4 @@
+[core]
+    remote = ml-model-storage
+['remote "ml-model-storage"']
+    url = s3://cd4ml/models/
